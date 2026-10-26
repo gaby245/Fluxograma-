@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Qual Axolote é Você?</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
+          rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="app-container">
+
+        <header class="app-header">
+            <span class="app-badge">🐾 Descubra Seu Axolote</span>
+
+            <h1>Fluxograma Axolote</h1>
+
+            <p>
+                Responda às perguntas e descubra qual tipo de
+                axolote combina mais com a sua vibe!
+            </p>
+        </header>
+
+        <main class="app-content">
+
+            <!-- TELA INICIAL -->
+            <section id="welcome-screen" class="screen active">
+
+                <div class="illustration-box">
+                    <span class="axolote-emoji">🌸</span>
+                </div>
+
+                <h2>Pronto para começar?</h2>
+
+                <p>
+                    Vamos mergulhar no mundo fascinante
+                    desses anfíbios incríveis.
+                </p>
+
+                <button id="start-btn" class="btn-primary" type="button">
+                    Iniciar Teste 💗
+                </button>
+
+            </section>
+
+            <!-- TELA DAS PERGUNTAS -->
+            <section id="quiz-screen" class="screen">
+
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+
+                <div class="question-counter">
+                    Pergunta <span id="current-q">1</span> de 5
+                </div>
+
+                <h2 id="question-text" class="question-title">
+                    Carregando pergunta...
+                </h2>
+
+                <div id="options-container" class="options-container">
+                </div>
+
+            </section>
+
+            <!-- TELA DO RESULTADO -->
+            <section id="result-screen" class="screen">
+
+                <div class="result-card">
+
+                    <span id="result-emoji" class="result-emoji">
+                        💖
+                    </span>
+
+                    <h3 id="result-title">Seu Axolote É...</h3>
+
+                    <p id="result-description">
+                        Seu resultado aparecerá aqui.
+                    </p>
+
+                </div>
+
+                <button id="restart-btn" class="btn-primary" type="button">
+                    🔄 Refazer Teste
+                </button>
+
+            </section>
+
+        </main>
+
+        <footer class="app-footer">
+            <p>🌸 💗 🌸 💗 🌸 💗 🌸</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

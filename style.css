@@ -1,0 +1,365 @@
+:root {
+    --rosa-bg: #fff0f5;
+    --rosa-card: #ffffff;
+    --rosa-principal: #ff69b4;
+    --rosa-escuro: #d81b60;
+    --rosa-claro: #ffb6c1;
+    --rosa-muito-claro: #ffe4e1;
+    --texto-principal: #4a2e35;
+    --texto-secundario: #7a5c64;
+    --sombra: rgba(216, 27, 96, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    background: var(--rosa-bg);
+    color: var(--texto-principal);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* CONTAINER PRINCIPAL */
+
+.app-container {
+    width: 100%;
+    max-width: 480px;
+
+    background: var(--rosa-card);
+    border: 2px solid var(--rosa-muito-claro);
+    border-radius: 28px;
+
+    box-shadow: 0 12px 32px var(--sombra);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+/* CABEÇALHO */
+
+.app-header {
+    background: linear-gradient(
+        135deg,
+        var(--rosa-principal),
+        var(--rosa-escuro)
+    );
+
+    color: white;
+    padding: 30px 24px;
+    text-align: center;
+
+    border-radius: 0 0 24px 24px;
+}
+
+.app-badge {
+    display: inline-block;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    padding: 6px 12px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.app-header h1 {
+    font-size: 25px;
+    margin: 14px 0 8px;
+}
+
+.app-header p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* CONTEÚDO */
+
+.app-content {
+    padding: 32px 24px;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* TELAS */
+
+.screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+}
+
+.screen.active {
+    display: flex;
+    animation: aparecer 0.35s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ILUSTRAÇÃO */
+
+.illustration-box {
+    width: 100px;
+    height: 100px;
+
+    background: var(--rosa-muito-claro);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+.axolote-emoji {
+    font-size: 60px;
+}
+
+/* TEXTOS */
+
+.screen h2 {
+    font-size: 22px;
+    color: var(--rosa-escuro);
+    margin-bottom: 12px;
+}
+
+.screen > p {
+    font-size: 15px;
+    color: var(--texto-secundario);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.question-title {
+    font-size: 20px !important;
+    line-height: 1.5;
+    margin: 16px 0 22px !important;
+}
+
+/* BOTÕES PRINCIPAIS */
+
+.btn-primary {
+    width: 100%;
+
+    background: var(--rosa-principal);
+    color: white;
+
+    border: none;
+    border-radius: 50px;
+
+    padding: 16px 20px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: var(--rosa-escuro);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-primary:focus-visible,
+.option-btn:focus-visible {
+    outline: 3px solid #9d174d;
+    outline-offset: 3px;
+}
+
+/* BARRA DE PROGRESSO */
+
+.progress-bar-container {
+    width: 100%;
+    height: 9px;
+
+    background: var(--rosa-muito-claro);
+    border-radius: 20px;
+
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+
+    background: linear-gradient(
+        90deg,
+        #ffb6c1,
+        var(--rosa-principal)
+    );
+
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.question-counter {
+    color: var(--rosa-escuro);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* OPÇÕES DAS PERGUNTAS */
+
+.options-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-btn {
+    width: 100%;
+
+    background: var(--rosa-bg);
+    color: var(--texto-principal);
+
+    border: 2px solid var(--rosa-claro);
+    border-radius: 16px;
+
+    padding: 16px;
+
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.option-btn:hover {
+    background: var(--rosa-muito-claro);
+    border-color: var(--rosa-principal);
+    transform: translateY(-2px);
+}
+
+.option-btn:active {
+    transform: scale(0.99);
+}
+
+/* RESULTADO */
+
+.result-card {
+    width: 100%;
+
+    background: var(--rosa-muito-claro);
+    border: 2px dashed var(--rosa-principal);
+    border-radius: 20px;
+
+    padding: 24px 18px;
+    margin-bottom: 24px;
+}
+
+.result-emoji {
+    display: block;
+    font-size: 64px;
+    margin-bottom: 12px;
+}
+
+.result-card h3 {
+    color: var(--rosa-escuro);
+    font-size: 21px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.result-card p {
+    color: var(--texto-principal);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* RODAPÉ */
+
+.app-footer {
+    text-align: center;
+    padding: 18px;
+
+    font-size: 15px;
+    background: var(--rosa-muito-claro);
+
+    border-top: 1px solid var(--rosa-claro);
+}
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        align-items: stretch;
+    }
+
+    .app-container {
+        max-width: 100%;
+        min-height: 100vh;
+
+        border: none;
+        border-radius: 0;
+    }
+
+    .app-header {
+        padding: 26px 20px;
+    }
+
+    .app-content {
+        padding: 28px 20px;
+    }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
